@@ -1,7 +1,33 @@
 <h1>About</h1>
 <p>cmsite: wcms use <a href="https://github.com/mdecycu/cmsimde">https://github.com/mdecycu/cmsimde</a> as submodule</p>
 <h1>HW</h1>
-<h2>w13</h2>
+<h2>w6</h2>
+<p><a href="https://mdecp2022.github.io/site-41123120/content/Brython.html?src=https://gist.githubusercontent.com/41123120/5f1b4c14fb6df29cc88e063cb36fb31d/raw/c63a90e8c2fbeb51b59e03a183f76010753cd4a4/w6_hw">hw</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+
+brython_div1 = document["brython_div1"]
+"""
+brython_div1 &lt;= html.BUTTON("hello")
+brython_div1 &lt;= html.BR()
+brython_div1 &lt;= html.A("google", href="https://google.com")
+"""
+
+url = "https://mde.tw/studlist/2022fall/1a.txt"
+data = open(url).read().split("\n")
+mdecp2022 = "https://mdecp2022.github.io/site-"
+data = data[1:-1]
+for i in data:
+    stud = i.split("\t")
+    stud_num = stud[0]
+    github_acc = stud[1]
+    #print(stud_num, github_acc)
+    if github_acc == "":
+        github_acc = stud_num
+    site = mdecp2022 + github_acc
+    link = html.A(stud_num, href=site)
+    brython_div1 &lt;= link
+    brython_div1 &lt;= html.BR()</pre>
+<p></p><h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-41123120/content/Brython.html?src=https://gist.githubusercontent.com/41123120/a802044987366aefa642d5fce7750c85/raw/8cec0887621011f10fec5605f098b0577e0f7575/w13_temp_ex1.py">ex1</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 f = c*9/5 + 32
